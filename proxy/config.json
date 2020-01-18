@@ -1,0 +1,8 @@
+{
+    "remote": "http://localhost:8000/",
+    "local": ":8080",
+    "404": 0.5,
+    "500": 0.3,
+    "custom": 0.0,
+    "customMessage": ""
+}
