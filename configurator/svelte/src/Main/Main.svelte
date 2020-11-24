@@ -1,5 +1,6 @@
 <script>
   import Menu from "./Menu.svelte";
+  import Slider from "./Slider.svelte";
 </script>
 
 <style>
@@ -25,7 +26,7 @@
     min-width: 92%;
     z-index: 0;
   }
-  
+
   .content-column .header-container {
     width: 100%;
     height: 331px;
@@ -47,13 +48,13 @@
     color: #899191;
     letter-spacing: 1px;
   }
-  .content-column .nav .shape {
+  .content-column .nav .title {
     font-family: "Nunito", sans-serif;
     font-weight: 200;
     font-size: 6em;
     color: #8b9494;
   }
-  .content-column .nav .score {
+  .content-column .nav .title-decoration {
     color: #34d0c4;
   }
 
@@ -68,7 +69,6 @@
   }
   .content-column .split-container .split {
     position: relative;
-    width: 30%;
     min-width: 240px;
     text-align: center;
     font-size: 1.7em;
@@ -76,7 +76,14 @@
     border-right: 1px solid #dddfe1;
     border-bottom: 1px solid #dddfe1;
   }
-  
+
+  .col-3 {
+    width: 30%;
+  }
+  .col-2 {
+    width: 45%;
+  }
+
   .content-column .split-container .split h3 {
     font-size: 1.1em;
     font-weight: 300;
@@ -86,51 +93,44 @@
   .content-column .split-container .split:last-child {
     border-right: none;
   }
-  .content-column .split-container .value {
-    display: block;
-    color: #58676c;
-    font-size: 2em;
-    line-height: 2em;
-    width: 180px;
-    margin: auto;
-    position: relative;
-    font-weight: 300;
-    margin: 10px auto;
-  }
-
 </style>
 
 <div class="container">
 
-  <Menu />
+  <!-- <Menu /> -->
 
   <div class="content-column">
     <div class="header-container" id="headerContainer">
       <div class="nav">
         <div class="content">
-          <p>
-            hi
-            <span class="name">jana</span>
-            , it seems you are in
-          </p>
-          <span class="shape score">good</span>
-          <span class="shape">shape</span>
+          <p>configure your</p>
+          <span class="title title-decoration">Chaos</span>
+          <span class="title">Proxy</span>
         </div>
       </div>
     </div>
 
     <div class="split-container">
-      <div class="split">
-        <h3>Temperature</h3>
-        <div class="value">36.7</div>
+      <div class="split col-2">
+        <h3>Remote server</h3>
       </div>
-      <div class="split">
-        <h3>Calories burned</h3>
-        <div class="value">537</div>
+      <div class="split col-2">
+        <h3>Proxy address</h3>
       </div>
-      <div class="split">
-        <h3>Heart rate</h3>
-        <div class="value">87</div>
+    </div>
+
+    <div class="split-container">
+      <div class="split col-3">
+        <h3>Error 404 Ratio</h3>
+        <Slider />
+      </div>
+      <div class="split col-3">
+        <h3>Error 500 Ratio</h3>
+        <Slider />
+      </div>
+      <div class="split col-3">
+        <h3>Normal ratio</h3>
+        <Slider />
       </div>
     </div>
   </div>
